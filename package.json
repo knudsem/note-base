@@ -1,0 +1,15 @@
+{
+  "name": "note-base",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-tenant team knowledge base. Run `npm install` then `npm start`.",
+  "scripts": {
+    "postinstall": "node scripts/setup.js",
+    "setup": "node scripts/setup.js",
+    "start": "concurrently -k -n back,front -c cyan,magenta \"node scripts/start-back.js\" \"npm --prefix frontend run dev\"",
+    "test": "node scripts/test.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

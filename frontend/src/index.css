@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Réglages typographiques fins : on active les variants stylistiques d'Inter
+   pour une apparence plus moderne (chiffres tabulaires alignés, "a" et "g" simples). */
+@layer base {
+  html {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    /* Fond légèrement gradué pour donner du relief sans distraction. */
+    background-color: #fafafa;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(59, 130, 246, 0.04), transparent),
+      radial-gradient(ellipse 60% 50% at 90% 100%, rgba(99, 102, 241, 0.03), transparent);
+    min-height: 100vh;
+  }
+
+  /* Couleur de sélection plus soignée que le bleu OS par défaut. */
+  ::selection {
+    background-color: rgb(191 219 254 / 0.7);
+    color: rgb(30 58 138);
+  }
+
+  /* Anneau de focus visible uniquement au clavier (pas au clic souris). */
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(59 130 246);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  /* Scrollbars discrètes sur navigateurs WebKit. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(203 213 225 / 0.5);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(148 163 184 / 0.7);
+    background-clip: content-box;
+  }
+}
+
+@layer utilities {
+  /* Easing personnalisé inspiré d'Apple, courbe douce et naturelle. */
+  .ease-out-expo {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Pour les compteurs et les chiffres dans les tableaux. */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

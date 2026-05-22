@@ -1,0 +1,25 @@
+# Node
+node_modules/
+*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Django
+db.sqlite3
+test_db.sqlite3
+
+# Build
+frontend/dist/
+
+# Env
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
